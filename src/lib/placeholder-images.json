@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "abaya-1",
+      "description": "Front view of an elegant black abaya.",
+      "imageUrl": "https://images.unsplash.com/photo-1601209177186-a7bf2ede6341?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxibGFjayUyMGFiYXlhfGVufDB8fHx8MTc2NjIzNzM5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "black abaya"
+    },
+    {
+      "id": "abaya-2",
+      "description": "Side view of an elegant black abaya, showing fabric detail.",
+      "imageUrl": "https://images.unsplash.com/photo-1736342182213-6c037467cb38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYmF5YSUyMGZhYnJpY3xlbnwwfHx8fDE3NjYyMzczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abaya fabric"
+    },
+    {
+      "id": "thobe-1",
+      "description": "Full view of a classic white thobe for men.",
+      "imageUrl": "https://images.unsplash.com/photo-1765366574945-e2f1b4b1a5b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHRob2JlfGVufDB8fHx8MTc2NjIzNzM5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "white thobe"
+    },
+    {
+      "id": "dallah-1",
+      "description": "A traditional brass dallah for serving Arabic coffee.",
+      "imageUrl": "https://images.unsplash.com/photo-1515442261605-65987783cb6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2ZmZWUlMjBwb3R8ZW58MHx8fHwxNzY2MjM3MzkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee pot"
+    },
+    {
+      "id": "dallah-2",
+      "description": "A set of small cups (finjan) matching the dallah.",
+      "imageUrl": "https://images.unsplash.com/photo-1602196817293-619d7458d6ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhcmFiaWMlMjBjdXBzfGVufDB8fHx8MTc2NjIzNzM5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "arabic cups"
+    },
+    {
+      "id": "bakhoor-1",
+      "description": "A sleek, modern portable bakhoor burner.",
+      "imageUrl": "https://images.unsplash.com/photo-1721446751216-79dfd2e1972e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbmNlbnNlJTIwYnVybmVyfGVufDB8fHx8MTc2NjIzNzM5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "incense burner"
+    },
+    {
+      "id": "earbuds-1",
+      "description": "A pair of white wireless earbuds with their charging case.",
+      "imageUrl": "https://images.unsplash.com/photo-1722448113450-f6860b7fbfe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3aXJlbGVzcyUyMGVhcmJ1ZHN8ZW58MHx8fHwxNzY2MTA4ODQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wireless earbuds"
+    },
+    {
+      "id": "smartwatch-1",
+      "description": "A digital smartwatch displaying a colorful watch face.",
+      "imageUrl": "https://images.unsplash.com/photo-1765612616903-719b6fc54e77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbWFydHdhdGNoJTIwZmFjZXxlbnwwfHx8fDE3NjYyMDczNjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smartwatch face"
+    },
+    {
+      "id": "smartwatch-2",
+      "description": "Side view of a smartwatch showing the crown and band.",
+      "imageUrl": "https://images.unsplash.com/photo-1590924040805-cb6a8c105e65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzbWFydHdhdGNoJTIwc2lkZXxlbnwwfHx8fDE3NjYxMjU1MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smartwatch side"
+    },
+    {
+      "id": "form-icon",
+      "description": "An icon of a registration form.",
+      "imageUrl": "https://images.unsplash.com/photo-1762340275963-04400d52c393?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmb3JtJTIwaWNvbnxlbnwwfHx8fDE3NjYyMzg5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "form icon"
+    },
+    {
+      "id": "phone-order",
+      "description": "A hand holding a smartphone to place an order.",
+      "imageUrl": "https://images.unsplash.com/photo-1661197880053-7d5441e937a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwaG9uZSUyMG9yZGVyfGVufDB8fHx8MTc2NjIzODk1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "phone order"
+    },
+    {
+      "id": "puzzle-integration",
+      "description": "Two hands connecting puzzle pieces, symbolizing integration.",
+      "imageUrl": "https://images.unsplash.com/photo-1756751308829-5adf2ad8c4a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwdXp6bGUlMjBpbnRlZ3JhdGlvbnxlbnwwfHx8fDE3NjYyMzg5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "puzzle integration"
+    },
+    {
+      "id": "delivery-package",
+      "description": "A person receiving a package from a delivery person.",
+      "imageUrl": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZWxpdmVyeSUyMHBhY2thZ2V8ZW58MHx8fHwxNzY2MjM4OTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "delivery package"
+    },
+    {
+      "id": "money-laptop",
+      "description": "A person with a laptop, with money flowing out of it.",
+      "imageUrl": "https://images.unsplash.com/photo-1612178991541-b48cc8e92a4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb25leSUyMGxhcHRvcHxlbnwwfHx8fDE3NjYyMzg5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "money laptop"
+    }
+  ]
+}

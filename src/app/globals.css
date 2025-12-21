@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 98%; /* Soft White */
+    --foreground: 222 47% 11%; /* Deep Navy */
+    --card: 210 100% 98%;
+    --card-foreground: 222 47% 11%;
+    --popover: 210 100% 98%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%; /* Royal Blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 222 47% 11%; /* Deep Navy */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 142 71% 45%; /* Success Green */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+      width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+  }
+}
+
+@layer utilities {
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  
+  @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 15px hsla(var(--primary), 0.2); }
+      50% { box-shadow: 0 0 25px hsla(var(--primary), 0.5); }
+  }
+
+  .marquee-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: scroll 40s linear infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s infinite;
+  }
+}

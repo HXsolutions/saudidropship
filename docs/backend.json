@@ -1,0 +1,131 @@
+{
+  "entities": {
+    "Product": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product for sale on the SaudiDropship platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Product entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the product."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the product in SAR."
+        },
+        "currency": {
+          "type": "string",
+          "description": "The currency of the product price (SAR)."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category the product belongs to."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the product."
+        },
+        "images": {
+          "type": "array",
+          "description": "An array of image URLs for the product.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stock": {
+          "type": "string",
+          "description": "The stock level of the product."
+        },
+        "sku": {
+          "type": "string",
+          "description": "The stock keeping unit for the product."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "price",
+        "currency",
+        "category",
+        "description",
+        "images",
+        "stock",
+        "sku"
+      ]
+    },
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user account.  Note: Authentication details should be managed by an external authentication system (e.g. Firebase Authentication).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address.",
+          "format": "email"
+        },
+        "name": {
+          "type": "string",
+          "description": "The user's display name."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "name"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/products/{productId}",
+        "definition": {
+          "entityName": "Product",
+          "schema": {
+            "$ref": "#/backend/entities/Product"
+          },
+          "description": "Stores product details. 'productId' is the unique identifier for each product.",
+          "params": [
+            {
+              "name": "productId",
+              "description": "Unique identifier for the product."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user account information. 'userId' is the unique identifier for each user.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Unique identifier for the user."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the SaudiDropship platform, focusing on product presentation and WhatsApp-based order placement.  The core principle is to maintain a flat, easily queryable product catalog. Categories are managed as a fixed list within the application code, not as a separate collection, to simplify management. User data is stored for potential future features, such as order history or account management, and follows a standard private data pattern. **Authorization Independence**: All authorization will happen in Firebase Authentication. Since no role-based authorization is requested, no denormalization is needed, as all read operations are public. If any administrative control is needed in the future, a new collection `/admins/{uid}` is recommended to store admin UIDs, which simplifies security rules based on document existence. **QAPs**: List operations for products are inherently secure since no filtering based on user roles is required; all products are intended to be publicly visible."
+  }
+}

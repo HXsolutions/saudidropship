@@ -1,0 +1,68 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    // Helper Functions
+    // -------------------------------------------------------------------------
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Admin check now reads from environment variables.
+    function isAdmin() {
+      // The ADMIN_UID must be set in your deployment environment.
+      return isSignedIn() && request.auth.uid == rules.env.get("ADMIN_UID");
+    }
+    
+    // -------------------------------------------------------------------------
+    // Schema Validation Functions
+    // -------------------------------------------------------------------------
+    function isProduct(data) {
+        return data.name is string && data.name.size() > 0 &&
+               data.price is number && data.price >= 0 &&
+               data.currency == "SAR" &&
+               data.category is string && data.category.size() > 0 &&
+               data.description is string && data.description.size() > 0 &&
+               data.images is list && data.images.size() > 0 &&
+               data.images[0] is string &&
+               data.stock is string && ['In Stock', 'Low Stock', 'Out of Stock'].hasAny([data.stock]) &&
+               data.sku is string && data.sku.size() > 0 &&
+               data.id is string && data.id.size() > 0;
+    }
+
+    function isUser(data) {
+        return data.email is string &&
+               data.name is string &&
+               data.id is string && data.id == request.auth.uid;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection Rules
+    // -------------------------------------------------------------------------
+
+    match /products/{productId} {
+      allow read: if true;
+      
+      allow create: if isAdmin() && isProduct(request.resource.data) && request.resource.data.id == productId;
+      
+      allow update: if isAdmin() && isProduct(request.resource.data) &&
+                      request.resource.data.id == resource.data.id &&
+                      request.resource.data.currency == resource.data.currency;
+
+      allow delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow get, update, delete: if isOwner(userId);
+      allow create: if isOwner(userId) && isUser(request.resource.data);
+      allow list: if false; 
+    }
+  }
+}
