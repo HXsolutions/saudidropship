@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
       icon: UserPlus,
       title: 'Register Your Account',
       description: 'Create an account to start your e-commerce journey.',
-      imageUrl: PlaceHolderImages.find(p => p.id === 'form-icon')?.imageUrl || 'https://picsum.photos/seed/form-icon/600/400',
+      imageUrl: PlaceHolderImages.find(p => p.id === 'form-icon')?.imageUrl || 'https://i.postimg.cc/90fg91fr/image.png',
       imageAlt: 'Illustration of a registration form',
       imageHint: 'form icon',
     },
