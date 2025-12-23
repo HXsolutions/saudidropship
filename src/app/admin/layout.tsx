@@ -21,7 +21,7 @@ import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 
-const ADMIN_UID = process.env.NEXT_PUBLIC_ADMIN_UID;
+const ADMIN_UID = '9cXiNKAfP9PsaDb8m5bZMEkWYUv1' || process.env.NEXT_PUBLIC_ADMIN_UID;
 
 function AdminSidebar() {
   const pathname = usePathname();
