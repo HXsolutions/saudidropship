@@ -15,7 +15,7 @@ export default function RegisterPage() {
       <div className="max-w-4xl mx-auto">
         <div className="w-full h-[1000px] md:h-[850px] overflow-hidden">
            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfBnp-H5GMeUZeuVKHSwq67racA_I4JJb2m7U_DoVRhJ58pIA/viewform?embedded=true"
+              src="https://docs.google.com/forms/d/e/1FAIpQLScDgl1fgnb6Ql3lqolCXrSnFJIxdEUwYqkNOYJLhyRrjZc3CA/viewform?embedded=true"
               width="100%"
               height="100%"
               frameBorder="0"
