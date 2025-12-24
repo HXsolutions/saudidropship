@@ -89,7 +89,8 @@ export default function ContactPage() {
                   <h3 className="text-xl md:text-2xl font-semibold text-navy mb-1">WhatsApp Us</h3>
                   <p className="text-slate-500 mb-2 text-sm sm:text-base">Chat with our friendly support team.</p>
                   <button onClick={handleWhatsAppClick} className="text-base md:text-lg font-medium text-primary hover:underline">
-                    +{whatsAppNumber}
+                    +966 50 814 2659
+                    +923150414574
                   </button>
                 </div>
               </AnimateOnScroll>
