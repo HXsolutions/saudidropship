@@ -108,16 +108,20 @@ export default function HowItWorksPage() {
   const steps = [
     {
       icon: UserPlus,
-      title: 'Register Your Account',
-      description: 'Create an account to start your e-commerce journey.',
+      title: 'Dropshipping Members',
+      description: 'Start Doors hi with our available products 
+28 SAR for everything 
+Call, Shipment, Tax 
+Return 8 SAR.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'form-icon')?.imageUrl || 'https://i.postimg.cc/90fg91fr/image.png',
       imageAlt: 'Illustration of a registration form',
       imageHint: 'form icon',
     },
     {
       icon: ShoppingCart,
-      title: 'Place Your First Order',
-      description: 'Send your first order via WhatsApp to verify your account.',
+      title: 'Whitelable / Private Label ',
+      description: 'Free Warehouse Service for White Label & Private Label Members
+18 SAR shipment & 8 SAR return.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'phone-order')?.imageUrl || 'https://picsum.photos/seed/phone-order/600/400',
       imageAlt: 'Illustration of placing an order on a phone',
       imageHint: 'phone order',
@@ -125,16 +129,16 @@ export default function HowItWorksPage() {
     },
     {
       icon: Settings,
-      title: 'Integrate Your Store',
-      description: 'Connect your store to automate order processing.',
+      title: 'Jeddah Sourcing',
+      description: 'Free Local Sourcing for all Members.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'puzzle-integration')?.imageUrl || 'https://picsum.photos/seed/puzzle-integration/600/400',
       imageAlt: 'Illustration of puzzle pieces connecting',
       imageHint: 'puzzle integration',
     },
     {
       icon: Truck,
-      title: 'We Ship For You',
-      description: 'We ship products directly to your customer with tracking.',
+      title: 'Warehouse Visit ',
+      description: 'Schedule Warehouse Visit if you are a Private Label / White Label Seller.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'delivery-package')?.imageUrl || 'https://picsum.photos/seed/delivery-package/600/400',
       imageAlt: 'Illustration of a delivery package',
       imageHint: 'delivery package',
@@ -142,8 +146,8 @@ export default function HowItWorksPage() {
     },
     {
       icon: Wallet,
-      title: 'Receive Your Profit',
-      description: 'Your profit is transferred to you every Friday.',
+      title: 'Invest With Us',
+      description: 'Join as a Sleeping Partner and earn from successful, established products.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'money-laptop')?.imageUrl || 'https://picsum.photos/seed/money-laptop/600/400',
       imageAlt: 'Illustration of money from a laptop',
       imageHint: 'money laptop',
