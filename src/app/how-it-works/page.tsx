@@ -7,6 +7,7 @@ import { UserPlus, ShoppingCart, Truck, Wallet, Settings } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import { useState } from 'react';
 
 const Step = ({
   icon: Icon,
@@ -27,6 +28,24 @@ const Step = ({
 }) => {
   const direction = isReversed ? -100 : 100;
   const imageDirection = isReversed ? 100 : -100;
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const getFallbackImage = (hint: string) => {
+    const fallbackUrls: { [key: string]: string } = {
+      'form icon': 'https://via.placeholder.com/400x300/4F46E5/FFFFFF?text=Registration',
+      'phone order': 'https://via.placeholder.com/400x300/10B981/FFFFFF?text=Phone+Order',
+      'puzzle integration': 'https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=Sourcing',
+      'delivery package': 'https://via.placeholder.com/400x300/EF4444/FFFFFF?text=Warehouse',
+      'money laptop': 'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Investment',
+    };
+    return fallbackUrls[hint] || 'https://via.placeholder.com/400x300/6B7280/FFFFFF?text=Image';
+  };
+
+  const displayImageUrl = imageError ? getFallbackImage(imageHint) : imageUrl;
 
   return (
     <>
@@ -47,7 +66,7 @@ const Step = ({
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-foreground">{title}</h3>
             </div>
-            <p className="text-muted-foreground text-base">{description}</p>
+            <p className="text-muted-foreground text-base whitespace-pre-line">{description}</p>
           </div>
         </AnimateOnScroll>
 
@@ -59,14 +78,19 @@ const Step = ({
           }}
           className="w-full md:w-5/12 flex justify-center mt-6 md:mt-0"
         >
-          <Image
-            src={imageUrl}
-            alt={imageAlt}
-            width={400}
-            height={400}
-            className="rounded-lg object-contain w-full max-w-xs md:max-w-none"
-            data-ai-hint={imageHint}
-          />
+          <div className="relative w-full max-w-xs md:max-w-none">
+            <Image
+              src={displayImageUrl}
+              alt={imageAlt}
+              width={400}
+              height={300}
+              className="rounded-lg object-contain w-full"
+              data-ai-hint={imageHint}
+              onError={handleImageError}
+              priority={false}
+              loading="lazy"
+            />
+          </div>
         </AnimateOnScroll>
 
         {/* Timeline Dot for Desktop */}
@@ -83,15 +107,20 @@ const Step = ({
             </div>
             <h3 className="text-xl font-bold text-foreground">{title}</h3>
         </div>
-        <Image
-            src={imageUrl}
-            alt={imageAlt}
-            width={400}
-            height={400}
-            className="rounded-lg object-contain w-full max-w-xs my-4"
-            data-ai-hint={imageHint}
-        />
-        <p className="text-muted-foreground text-base text-center">{description}</p>
+        <div className="relative w-full max-w-xs my-4">
+          <Image
+              src={displayImageUrl}
+              alt={imageAlt}
+              width={400}
+              height={300}
+              className="rounded-lg object-contain w-full"
+              data-ai-hint={imageHint}
+              onError={handleImageError}
+              priority={false}
+              loading="lazy"
+          />
+        </div>
+        <p className="text-muted-foreground text-base text-center whitespace-pre-line">{description}</p>
       </AnimateOnScroll>
     </>
   );
@@ -109,19 +138,19 @@ export default function HowItWorksPage() {
     {
       icon: UserPlus,
       title: 'Dropshipping Members',
-      description: 'Start Doors hi with our available products 
-28 SAR for everything 
-Call, Shipment, Tax 
-Return 8 SAR.',
+      description: `Start Doors hi with our available products
+28 SAR for everything
+Call, Shipment, Tax
+Return 8 SAR.`,
       imageUrl: PlaceHolderImages.find(p => p.id === 'form-icon')?.imageUrl || 'https://i.postimg.cc/90fg91fr/image.png',
       imageAlt: 'Illustration of a registration form',
       imageHint: 'form icon',
     },
     {
       icon: ShoppingCart,
-      title: 'Whitelable / Private Label ',
-      description: 'Free Warehouse Service for White Label & Private Label Members
-18 SAR shipment & 8 SAR return.',
+      title: 'Whitelable / Private Label',
+      description: `Free Warehouse Service for White Label & Private Label Members
+18 SAR shipment & 8 SAR return.`,
       imageUrl: PlaceHolderImages.find(p => p.id === 'phone-order')?.imageUrl || 'https://picsum.photos/seed/phone-order/600/400',
       imageAlt: 'Illustration of placing an order on a phone',
       imageHint: 'phone order',
@@ -137,7 +166,7 @@ Return 8 SAR.',
     },
     {
       icon: Truck,
-      title: 'Warehouse Visit ',
+      title: 'Warehouse Visit',
       description: 'Schedule Warehouse Visit if you are a Private Label / White Label Seller.',
       imageUrl: PlaceHolderImages.find(p => p.id === 'delivery-package')?.imageUrl || 'https://picsum.photos/seed/delivery-package/600/400',
       imageAlt: 'Illustration of a delivery package',
